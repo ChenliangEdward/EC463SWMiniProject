@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Button, TextInput, TouchableOpacity } from 'react-native';
 import { useState } from 'react';
 
 export default function App() {
@@ -32,8 +32,10 @@ export default function App() {
         />
       </View>
 
+      <Button title="Sign up"></Button>
+
       <TouchableOpacity style={styles.loginBtn}>
-        <Text style={styles.loginText}>LOGIN</Text>
+        <Text style={styles.loginText}> LOGIN</Text>
       </TouchableOpacity>
 
       <StatusBar style="auto" />
@@ -65,7 +67,6 @@ const styles = StyleSheet.create({
     height: 50,
     flex: 1,
     padding: 10,
-    marginLeft: 20,
   },
   loginBtn:
   {  
