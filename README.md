@@ -1,2 +1,6 @@
 # EC463SWMiniProject
-This is the github repo for the first MiniProject of EC463. 
+
+# Recipe Builder
+This cross-platform mobile application allows a user to create an account, search or scan food items to find nutritional facts using an FDA API, and build recipes with individual ingredients to save for future use. User account data is stored using Google Firebase. 
+
+# Screenshots of App (iOS)
