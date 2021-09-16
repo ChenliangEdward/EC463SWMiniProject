@@ -1,86 +1,18 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, Button, TextInput, TouchableOpacity, Modal, Pressable } from 'react-native';
-import { useState } from 'react';
+import { StyleSheet } from 'react-native'
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { HomeScreen } from "./screens/HomeScreen"
 
 export default function App() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [modalVisible, setModalVisible] = useState(false);
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}> 
-        Recipe Builder
-      </Text>
-
-      <View style={styles.inputView}>
-        <TextInput
-          style={styles.TextInput}
-          placeholder="email"
-          placeholderTextColor="#003f5c"
-          onChangeText={(email) => setEmail(email)}
-        />
-      </View>
-
-      <View style={styles.inputView}>
-        <TextInput
-          style={styles.TextInput}
-          placeholder="password"
-          placeholderTextColor="#003f5c"
-          secureTextEntry={true}
-          onChangeText={(password) => setPassword(password)}
-        />
-      </View>
-
-      <Modal
-        animationType="slide"
-        transparent={true}
-        visible={modalVisible}
-        onRequestClose={() => {
-          Alert.alert("Modal has been closed.");
-          setModalVisible(!modalVisible);
-        }}
-      >
-        <View style={styles.container}>
-            <View style={styles.inputView}>
-              <TextInput
-                style={styles.TextInput}
-                placeholder="email"
-                placeholderTextColor="#003f5c"
-                onChangeText={(email) => setEmail(email)}
-                />
-            </View>
-
-            <View style={styles.inputView}>
-              <TextInput
-                style={styles.TextInput}
-                placeholder="password"
-                placeholderTextColor="#003f5c"
-                secureTextEntry={true}
-                onChangeText={(password) => setPassword(password)}
-              />
-            </View>
-            <Pressable
-              style={styles.signupBtn}
-              onPress={() => setModalVisible(!modalVisible)}
-            >
-              <Text style={styles.textStyle}>login</Text>
-            </Pressable>
-          </View>
-      </Modal>
-
-      <Pressable style={styles.signupBtn}
-        onPress={() => setModalVisible(true)}>
-        <Text style={styles.textStyle}>Sign Up</Text>
-      </Pressable>
-
-      <TouchableOpacity style={styles.loginBtn}>
-        <Text style={styles.loginText}> LOGIN</Text>
-      </TouchableOpacity>
-
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Recipe" component={RecipeScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
