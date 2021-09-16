@@ -4,15 +4,9 @@ import { useState } from "react";
 import { StatusBar } from "expo-status-bar";
 import { styles } from "../styles/styles";
 
-function HomeScreen({ navigation }) {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [modalVisible, setModalVisible] = useState(false);
-
+function SignUp({ navigation }) {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Recipe Builder</Text>
-
       <View style={styles.inputView}>
         <TextInput
           style={styles.TextInput}
@@ -21,7 +15,6 @@ function HomeScreen({ navigation }) {
           onChangeText={(email) => setEmail(email)}
         />
       </View>
-
       <View style={styles.inputView}>
         <TextInput
           style={styles.TextInput}
@@ -31,23 +24,11 @@ function HomeScreen({ navigation }) {
           onChangeText={(password) => setPassword(password)}
         />
       </View>
-      <Pressable
-        style={styles.signupBtn}
-        onPress={() => navigation.navigate("SignUp")}
-      >
-        <Text style={styles.textStyle}>Sign Up</Text>
+      <Pressable style={styles.signupBtn}>
+        <Text style={styles.textStyle}>SignUpNow!</Text>
       </Pressable>
-
-      <Pressable
-        style={styles.loginBtn}
-        onPress={() => navigation.navigate("Details")}
-      >
-        <Text style={styles.loginText}> LOGIN</Text>
-      </Pressable>
-
-      <StatusBar style="auto" />
     </View>
   );
 }
 
-export default HomeScreen;
+export default SignUp;

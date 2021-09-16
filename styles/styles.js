@@ -35,9 +35,9 @@ export const styles = StyleSheet.create({
     backgroundColor: "#20b2aa",
   },
   signupBtn: {
-    width: "25%",
+    width: "40%",
     borderRadius: 20,
-    height: 25,
+    height: 30,
     alignItems: "center",
     justifyContent: "center",
     marginTop: 5,
