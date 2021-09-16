@@ -4,17 +4,8 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomeScreen from "./screens/HomeScreen";
 import SignUp from "./screens/SignUp";
-function DetailsScreen({ navigation }) {
-  return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>Details Screen</Text>
-      <Button
-        title="Go to Details... again"
-        onPress={() => navigation.navigate("Details")}
-      />
-    </View>
-  );
-}
+import Details from "./screens/Details";
+import FoodSearch from "./screens/FoodSearch";
 
 const Stack = createNativeStackNavigator();
 
@@ -23,8 +14,9 @@ function App() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Details" component={DetailsScreen} />
+        <Stack.Screen name="Details" component={Details} />
         <Stack.Screen name="SignUp" component={SignUp} />
+        <Stack.Screen name="FoodSearch" component={FoodSearch} />
       </Stack.Navigator>
     </NavigationContainer>
   );
