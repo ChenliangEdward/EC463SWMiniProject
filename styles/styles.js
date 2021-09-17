@@ -15,7 +15,7 @@ export const styles = StyleSheet.create({
   inputView: {
     backgroundColor: "#87cefa",
     borderRadius: 30,
-    width: "70%",
+    width: "40%",
     height: 45,
     marginBottom: 20,
     alignItems: "center",
@@ -24,6 +24,7 @@ export const styles = StyleSheet.create({
     height: 50,
     flex: 1,
     padding: 10,
+    textAlign: "center",
   },
   loginBtn: {
     width: "80%",
@@ -35,7 +36,7 @@ export const styles = StyleSheet.create({
     backgroundColor: "#20b2aa",
   },
   signupBtn: {
-    width: "40%",
+    width: "30%",
     borderRadius: 20,
     height: 30,
     alignItems: "center",
@@ -43,4 +44,10 @@ export const styles = StyleSheet.create({
     marginTop: 5,
     backgroundColor: "#40e0d0",
   },
+  recipeBtn: {
+    position: 'absolute',
+    top:10,
+    alignItems: "center",
+    justifyContent: "center",
+}
 });
