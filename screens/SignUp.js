@@ -17,7 +17,7 @@ function SignUp({ navigation }) {
         password,
       },
     }).then((res) => {
-      Alert.alert("Alert", "sign up successful!");
+      Alert.alert("Alert", "Sign up successfully!");
     });
   }
 
