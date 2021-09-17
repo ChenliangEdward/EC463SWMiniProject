@@ -39,7 +39,10 @@ function SearchPage({ navigation }) {
         placeholder="Food/Barcode here..."
       />
       <Button title="Search" onPress={SendRequest} />
-      <Button title="Scan Barcode" />
+      <Button
+        title="Scan Barcode"
+        onPress={() => navigation.navigate("BarcodeScanner")}
+      />
       {loading && <ActivityIndicator size="large" />}
       <View style={styles.foodContainer}>
         {foods.map((food) => (

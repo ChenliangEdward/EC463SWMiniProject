@@ -6,7 +6,7 @@ import HomeScreen from "./screens/HomeScreen";
 import SignUp from "./screens/SignUp";
 import Details from "./screens/Details";
 import FoodSearch from "./screens/FoodSearch";
-
+import BarcodeScanner from "./screens/BarcodeScanner";
 const Stack = createNativeStackNavigator();
 
 function App() {
@@ -17,6 +17,7 @@ function App() {
         <Stack.Screen name="Details" component={Details} />
         <Stack.Screen name="SignUp" component={SignUp} />
         <Stack.Screen name="FoodSearch" component={FoodSearch} />
+        <Stack.Screen name="BarcodeScanner" component={BarcodeScanner} />
       </Stack.Navigator>
     </NavigationContainer>
   );
