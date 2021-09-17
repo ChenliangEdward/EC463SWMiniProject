@@ -10,6 +10,7 @@ import {
   TextInput,
   ActivityIndicator,
 } from "react-native";
+import { styles } from "../styles/styles";
 
 function SearchPage({ navigation }) {
   const [text, setText] = React.useState("");
@@ -25,38 +26,38 @@ function SearchPage({ navigation }) {
       setLoading(false);
       if (res.data.foods) {
         setFoods(res.data.foods.slice(0, 5));
-        console.log(res.data.foods);
+        // console.log(res.data.foods);
       }
     });
   }
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={localstyles.container}>
       <TextInput
-        style={styles.input}
+        style={localstyles.input}
         onChangeText={(text) => setText(text)}
         value={text}
         placeholder="Food/Barcode here..."
       />
-      <Button title="Search" onPress={SendRequest} />
+      <Button style={styles.signupBtn} title="Search" onPress={SendRequest} />
       <Button
         title="Scan Barcode"
         onPress={() => navigation.navigate("BarcodeScanner")}
       />
       {loading && <ActivityIndicator size="large" />}
-      <View style={styles.foodContainer}>
+      <View style={localstyles.foodContainer}>
         {foods.map((food) => (
-          <View key={food.fdcId} style={styles.foodItem}>
-            <View style={styles.row}>
-              <Text style={styles.bold}>description: </Text>
+          <View key={food.fdcId} style={localstyles.foodItem}>
+            <View style={localstyles.row}>
+              <Text style={localstyles.bold}>description: </Text>
               <Text>{food.description}</Text>
             </View>
-            <View style={styles.row}>
-              <Text style={styles.bold}>foodCategory: </Text>
-              <Text>{food.foodCategory}</Text>
+            <View style={localstyles.row}>
+              <Text style={localstyles.bold}>foodCategory: </Text>
+              <Text style={localstyles.foodCategory}>{food.foodCategory}</Text>
             </View>
-            <View style={styles.row}>
-              <Text style={styles.bold}>energy: </Text>
+            <View style={localstyles.row}>
+              <Text style={localstyles.bold}>energy: </Text>
               <Text>
                 {
                   food.foodNutrients.find((n) => n.nutrientName === "Energy")
@@ -74,7 +75,7 @@ function SearchPage({ navigation }) {
 
 export default SearchPage;
 
-const styles = StyleSheet.create({
+const localstyles = StyleSheet.create({
   input: {
     height: 40,
     margin: 12,
@@ -89,14 +90,14 @@ const styles = StyleSheet.create({
   },
   foodContainer: {
     flex: 1,
-    padding: 10,
+    padding: 2,
   },
   foodItem: {
-    borderWidth: 1,
+    borderWidth: 2,
     borderStyle: "solid",
     borderColor: "#e1e1e1",
     marginBottom: 10,
-    padding: 10,
+    padding: 5,
   },
   row: {
     // flex: 1,
@@ -104,5 +105,9 @@ const styles = StyleSheet.create({
   },
   bold: {
     fontWeight: "bold",
+  },
+  foodCategory: {
+    width: 200,
+    overflow: "hidden",
   },
 });
