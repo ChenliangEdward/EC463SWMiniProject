@@ -1,5 +1,4 @@
 import * as React from "react";
-import { Text, View, Button } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomeScreen from "./screens/HomeScreen";
@@ -7,6 +6,7 @@ import SignUp from "./screens/SignUp";
 import Details from "./screens/Details";
 import FoodSearch from "./screens/FoodSearch";
 import BarcodeScanner from "./screens/BarcodeScanner";
+import Recipes from "./screens/Recipes";
 const Stack = createNativeStackNavigator();
 
 function App() {
@@ -18,6 +18,7 @@ function App() {
         <Stack.Screen name="SignUp" component={SignUp} />
         <Stack.Screen name="FoodSearch" component={FoodSearch} />
         <Stack.Screen name="BarcodeScanner" component={BarcodeScanner} />
+        <Stack.Screen name="Recipes" component={Recipes} />
       </Stack.Navigator>
     </NavigationContainer>
   );
