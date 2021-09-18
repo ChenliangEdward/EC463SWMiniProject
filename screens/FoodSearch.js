@@ -12,7 +12,7 @@ import {
 } from "react-native";
 import { styles } from "../styles/styles";
 
-function SearchPage({ navigation }) {
+function SearchPage({ navigation, route }) {
   const [text, setText] = React.useState("");
   const [loading, setLoading] = React.useState(false);
   const [foods, setFoods] = React.useState([]);
