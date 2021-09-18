@@ -12,6 +12,13 @@ import {
 } from "react-native";
 import { styles } from "../styles/styles";
 
+function addToRecipe({navigation}) {
+  navigation.navigate(
+    "Details", 
+    {ingredient: food.fdcId} 
+  );
+}
+
 function SearchPage({ navigation, route }) {
   const [text, setText] = React.useState("");
   const [loading, setLoading] = React.useState(false);
@@ -66,7 +73,7 @@ function SearchPage({ navigation, route }) {
                 Kcal
               </Text>
             </View>
-            <Button title="+ to recipe"></Button>
+            <Button title="+ to recipe" onPress={addToRecipe}></Button>
           </View>
         ))}
       </View>

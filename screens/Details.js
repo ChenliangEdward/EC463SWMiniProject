@@ -1,9 +1,9 @@
 import React from "react";
-import { Text, View, TextInput, Modal, Button } from "react-native";
-import { StatusBar } from "expo-status-bar";
-import { styles } from "../styles/styles";
+import { View, Button } from "react-native";
 
-function Details({ navigation }) {
+function Details({ route, navigation }) {
+  const fdcId = route.params; 
+
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
       <Button
