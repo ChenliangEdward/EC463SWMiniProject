@@ -59,7 +59,7 @@ function BarcodeScanner({ navigation, route }) {
 
       {scanned && (
         <Button
-          title={"Scan again?"}
+          title={"Go Back"}
           onPress={() => {
             setScanned(false);
             navigation.navigate({

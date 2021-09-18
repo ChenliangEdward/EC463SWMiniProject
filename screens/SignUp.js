@@ -8,6 +8,7 @@ import axios from "axios";
 function SignUp({ navigation }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [recipe, setRecipe] = useState("");
 
   function signUp() {
     axios({
@@ -15,6 +16,7 @@ function SignUp({ navigation }) {
       method: "put",
       data: {
         password,
+        recipe,
       },
     }).then((res) => {
       Alert.alert("Alert", "Sign up successfully!");

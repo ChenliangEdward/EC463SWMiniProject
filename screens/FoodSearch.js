@@ -16,7 +16,7 @@ function SearchPage({ navigation, route }) {
   const [text, setText] = React.useState("");
   const [loading, setLoading] = React.useState(false);
   const [foods, setFoods] = React.useState([]);
-
+  React.useEffect(() => {}, [route.params?.foodNumber]);
   function SendRequest(values) {
     setLoading(true);
     axios({
@@ -36,8 +36,9 @@ function SearchPage({ navigation, route }) {
       <TextInput
         style={localstyles.input}
         onChangeText={(text) => setText(text)}
-        value={text}
+        value={route.params?.foodNumber}
         placeholder="Food/Barcode here..."
+        onPress={(text) => setText(text)}
       />
       <Button style={styles.signupBtn} title="Search" onPress={SendRequest} />
       <Button
