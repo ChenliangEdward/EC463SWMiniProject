@@ -12,6 +12,7 @@ function HomeScreen({ navigation }) {
   const [modalVisible, setModalVisible] = useState(false);
   var loginApproved = false;
   function queryAPI() {
+    // check that json
     axios({
       url: `https://ec463-d86c6-default-rtdb.firebaseio.com/${email}.json`,
       method: "get",
@@ -19,7 +20,7 @@ function HomeScreen({ navigation }) {
       if (!res.data) {
         Alert.alert("Alert", "Wrong Password/Username!");
       } else if (res.data.password === password) {
-        navigation.navigate("Details");
+        navigation.navigate({ name: "Details", params: { username: email } });
       }
     });
   }
