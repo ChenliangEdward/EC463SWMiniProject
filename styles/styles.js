@@ -15,7 +15,7 @@ export const styles = StyleSheet.create({
   inputView: {
     backgroundColor: "#87cefa",
     borderRadius: 30,
-    width: "40%",
+    width: "50%",
     height: 45,
     marginBottom: 20,
     alignItems: "center",

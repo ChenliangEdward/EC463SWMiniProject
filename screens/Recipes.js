@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Button, TouchableHighlight, TextInput, Text } from "react-native";
+import { View, Button, TouchableHighlight, TextInput, Text, Pressable } from "react-native";
 import { styles } from "../styles/styles";
 import { useState } from "react";
 
@@ -34,11 +34,12 @@ function Recipes({ navigation, route }) {
       />
       <Text>{JSON.stringify(ingredient)}</Text>
       <View style={styles.container}>
-        <Button
-          title="foodSearch"
+        <Pressable
+          style={styles.signupBtn}
           onPress={() => navigation.navigate("FoodSearch")}
-          style={styles.recipeBtn}
-        />
+          >
+          <Text>   Food Search   </Text>
+        </Pressable>
         <Button title="Save" style={styles.recipeBtn} />
       </View>
     </View>

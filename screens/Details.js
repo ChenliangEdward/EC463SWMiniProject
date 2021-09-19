@@ -1,6 +1,7 @@
 import React from "react";
-import { Text, View, Button, Alert, StyleSheet } from "react-native";
+import { Text, View, Button, Alert, StyleSheet, Pressable } from "react-native";
 import axios from "axios";
+import { styles } from "../styles/styles";
 
 function Details({ route, navigation }) {
   const [email, setemail] = React.useState("");
@@ -51,11 +52,12 @@ function Details({ route, navigation }) {
         title="Food Search"
         onPress={() => navigation.navigate("FoodSearch")}
       /> */}
-
-      <Button
-        title="Create new Recipe"
+      <Pressable
+        style={styles.signupBtn}
         onPress={() => navigation.navigate("Recipes")}
-      />
+      >
+        <Text>Create new Recipe</Text>
+      </Pressable>
     </View>
   );
 }
