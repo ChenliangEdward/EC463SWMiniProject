@@ -3,38 +3,34 @@ import { View, Button, TouchableHighlight, TextInput } from "react-native";
 import { styles } from "../styles/styles";
 import { useState } from "react";
 
-function addRecipe() {
+function Recipes({ navigation }) {
   const [recipe_name, setRecipeName] = useState("");
-
-  return (
+  const [showResults, setShowResults] = useState(false);
+  const onClick = () => setShowResults(true);
+  const RecipeThing = () => (
     <View style={styles.container}>
       <TouchableHighlight onPress={() => navigation.navigate("Details")}>
         <View style={styles.recipeBox}>
           <TextInput
             style={styles.TextInput}
-            placeholder="recipe name"
+            placeholder="add recipe name"
             placeholderTextColor="#003f5c"
-            onChangeText={(recipe_name) => setRecipeName(recipe_name)}
+            //onChangeText={(recipe_name) => setRecipeName(recipe_name)}
           />
           <Button
-            title="Save"
+          title="Save"
           />
         </View>
       </TouchableHighlight>
-    </View>  
-  )
+    </View>
+  );
+  return (
+    <View style={styles.container}>
+      <View style={styles.recipeBtn}>
+        <Button title="Add Recipe" onPress={onClick} />
+        {showResults ? <RecipeThing /> : null}
+      </View>
+    </View>
+  );
 }
-
-function Recipes({ navigation }) {
-    return (
-      <View style={styles.container}>
-        <View style={styles.recipeBtn}>
-            <Button
-            title="Add Recipe"
-            onPress={() => {addRecipe}}
-            />
-        </View>
-      </View>  
-    );
-  }
-  export default Recipes;
+export default Recipes;
