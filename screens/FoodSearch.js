@@ -1,4 +1,3 @@
-import { StatusBar } from "expo-status-bar";
 import React from "react";
 import axios from "axios";
 import {
@@ -11,18 +10,13 @@ import {
   ActivityIndicator,
 } from "react-native";
 import { styles } from "../styles/styles";
-
-function addToRecipe({navigation}) {
-  navigation.navigate(
-    "Details", 
-    {ingredient: food.fdcId} 
-  );
-}
+import { string } from "prop-types";
 
 function SearchPage({ navigation, route }) {
   const [text, setText] = React.useState("");
   const [loading, setLoading] = React.useState(false);
   const [foods, setFoods] = React.useState([]);
+  const ingredient = route.params;
 
   function SendRequest(values) {
     setLoading(true);
@@ -73,7 +67,14 @@ function SearchPage({ navigation, route }) {
                 Kcal
               </Text>
             </View>
-            <Button title="+ to recipe" onPress={addToRecipe}></Button>
+            <Button 
+              title="+ to recipe" 
+              onPress={() =>
+                navigation.push("Recipes", {
+                  ingredient: food.description,
+                })
+              }
+            />
           </View>
         ))}
       </View>

@@ -3,7 +3,6 @@ import { Text, View, Button, Alert, StyleSheet } from "react-native";
 import axios from "axios";
 
 function Details({ route, navigation }) {
-  const fdcId = route.params;
   const [email, setemail] = React.useState("");
   const [recipes, setRecipes] = React.useState([]);
   // const [fullRecipe, setfullRecipe] = React.useState({});
