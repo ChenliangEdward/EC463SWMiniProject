@@ -1,17 +1,13 @@
 import React from "react";
-import {
-  Text,
-  View,
-  Button,
-  Alert,
-  StyleSheet,
-} from "react-native";
+import { Text, View, Button, Alert, StyleSheet } from "react-native";
 import axios from "axios";
 
 function Details({ route, navigation }) {
   const fdcId = route.params;
   const [email, setemail] = React.useState("");
   const [recipes, setRecipes] = React.useState([]);
+  // const [fullRecipe, setfullRecipe] = React.useState({});
+  const [fullRecipe, setfullRecipe] = React.useState({});
   React.useEffect(() => {
     if (route.params?.username) {
       queryAPI();
@@ -28,8 +24,10 @@ function Details({ route, navigation }) {
         Alert.alert("Alert", "nothing has been created yet!");
       } else {
         var recipeName = Object.keys(res.data);
-        console.log(recipeName);
+        setfullRecipe(res.data);
+        console.log(fullRecipe);
         setRecipes(recipeName.slice(0, 5));
+        console.log(recipeName);
       }
     });
   }
@@ -40,6 +38,13 @@ function Details({ route, navigation }) {
           <View style={localstyles.row}>
             <Text style={localstyles.bold}>description: </Text>
             <Text>{recipeName}</Text>
+            <Button
+              title="show Details"
+              onPress={() => {
+                console.log(fullRecipe + "2");
+                Alert.alert("alert", JSON.stringify(fullRecipe[recipeName]));
+              }}
+            />
           </View>
         </View>
       ))}
