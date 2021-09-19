@@ -2,14 +2,10 @@ import React from "react";
 import {
   Text,
   View,
-  TextInput,
-  Modal,
   Button,
   Alert,
   StyleSheet,
 } from "react-native";
-import { StatusBar } from "expo-status-bar";
-import { styles } from "../styles/styles";
 import axios from "axios";
 
 function Details({ route, navigation }) {
