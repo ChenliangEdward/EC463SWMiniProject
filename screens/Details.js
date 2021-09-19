@@ -42,7 +42,7 @@ function Details({ route, navigation }) {
               title="show Details"
               onPress={() => {
                 console.log(fullRecipe + "2");
-                Alert.alert("alert", JSON.stringify(fullRecipe[recipeName]));
+                Alert.alert(recipeName, JSON.stringify(fullRecipe[recipeName]));
               }}
             />
           </View>
