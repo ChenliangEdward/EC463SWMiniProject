@@ -45,8 +45,6 @@ export const styles = StyleSheet.create({
     backgroundColor: "#40e0d0",
   },
   recipeBtn: {
-    position: 'absolute',
-    top:10,
     alignItems: "center",
     justifyContent: "center",
 }

@@ -1,12 +1,14 @@
 import React from "react";
-import { View, Button, TouchableHighlight, TextInput } from "react-native";
+import { View, Button, TouchableHighlight, TextInput, Text } from "react-native";
 import { styles } from "../styles/styles";
 import { useState } from "react";
 
-function Recipes({ navigation }) {
+function Recipes({ navigation, route }) {
   const [recipe_name, setRecipeName] = useState("");
   const [showResults, setShowResults] = useState(false);
   const onClick = () => setShowResults(true);
+  const ingredient = route.params;
+
   const RecipeThing = () => (
     <View style={styles.container}>
       <TouchableHighlight onPress={() => navigation.navigate("Details")}>
@@ -30,11 +32,15 @@ function Recipes({ navigation }) {
         placeholderTextColor="#003f5c"
         //onChangeText={(recipe_name) => setRecipeName(recipe_name)}
       />
-      <Button
-        title="foodSearch"
-        onPress={() => navigation.navigate("FoodSearch")}
-      />
-      <Button title="Save" style={styles.recipeBtn} />
+      <Text>{JSON.stringify(ingredient)}</Text>
+      <View style={styles.container}>
+        <Button
+          title="foodSearch"
+          onPress={() => navigation.navigate("FoodSearch")}
+          style={styles.recipeBtn}
+        />
+        <Button title="Save" style={styles.recipeBtn} />
+      </View>
     </View>
   );
 }
