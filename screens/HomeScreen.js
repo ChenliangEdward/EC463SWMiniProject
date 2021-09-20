@@ -11,6 +11,8 @@ function HomeScreen({ navigation }) {
   const [password, setPassword] = useState("");
   const [modalVisible, setModalVisible] = useState(false);
   var loginApproved = false;
+  global.username = "";
+  global.ingredients = [];
   function queryAPI() {
     // check that json
     axios({
@@ -20,6 +22,7 @@ function HomeScreen({ navigation }) {
       if (!res.data) {
         Alert.alert("Alert", "Wrong Password/Username!");
       } else if (res.data.password === password) {
+        global.username = email;
         navigation.navigate({ name: "Details", params: { username: email } });
       }
     });

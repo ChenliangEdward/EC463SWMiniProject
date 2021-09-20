@@ -17,7 +17,7 @@ function Details({ route, navigation }) {
   }, [route.params?.username]);
   function queryAPI() {
     axios({
-      url: `https://ec463-d86c6-default-rtdb.firebaseio.com/${route.params?.username}/recipe.json`,
+      url: `https://ec463-d86c6-default-rtdb.firebaseio.com/${global.username}/recipe.json`,
       method: "get",
     }).then((res) => {
       if (!res.data) {

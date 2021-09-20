@@ -73,7 +73,12 @@ function SearchPage({ navigation, route }) {
                 navigation.navigate({
                   name: "Recipes",
                   params: {
-                    ingredient: food.description,
+                    ingredient: {
+                      name: food.description,
+                      energy: food.foodNutrients.find(
+                        (n) => n.nutrientName === "Energy"
+                      ).value,
+                    },
                   },
                 })
               }
