@@ -20,7 +20,12 @@ This cross-platform mobile application allows a user to create an account, searc
 ![Simulator Screen Shot - iPhone 12 Pro Max - 2021-09-19 at 22 58 18](https://user-images.githubusercontent.com/46791493/133953321-1637911a-9d8a-4d91-90b8-f1283e718424.png)
 ![Simulator Screen Shot - iPhone 12 Pro Max - 2021-09-19 at 22 58 28](https://user-images.githubusercontent.com/46791493/133953322-71423c35-2ae4-413b-bd20-d2e8486c76c6.png)
 ![Simulator Screen Shot - iPhone 12 Pro Max - 2021-09-19 at 22 58 31](https://user-images.githubusercontent.com/46791493/133953323-bff4b97e-6abd-461c-aaf2-6869763cb516.png)
-
+# Rest API used
+- Our backend part is supported with firebase.
+    Signup: PUT
+    Add recipe: PUT
+    Login: GET
+    A more detailed can be found here https://firebase.google.com/docs/database/rest/save-data
 
 # Further possible improvements
 
