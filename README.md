@@ -14,6 +14,7 @@ This cross-platform mobile application allows a user to create an account, searc
 
 # Further possible improvements
 
+- fix bugs (delay in display of ingredient for new recipe)
 - add Google authentication/more secure login
 - add photos to saved recipes
 - general UI improvements
