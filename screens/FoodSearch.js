@@ -67,11 +67,14 @@ function SearchPage({ navigation, route }) {
                 Kcal
               </Text>
             </View>
-            <Button 
-              title="+ to recipe" 
+            <Button
+              title="+ to recipe"
               onPress={() =>
-                navigation.push("Recipes", {
-                  ingredient: food.description,
+                navigation.navigate({
+                  name: "Recipes",
+                  params: {
+                    ingredient: food.description,
+                  },
                 })
               }
             />

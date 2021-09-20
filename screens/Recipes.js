@@ -17,19 +17,24 @@ function Recipes({ navigation }) {
             placeholderTextColor="#003f5c"
             //onChangeText={(recipe_name) => setRecipeName(recipe_name)}
           />
-          <Button
-          title="Save"
-          />
+          <Button title="Save" />
         </View>
       </TouchableHighlight>
     </View>
   );
   return (
     <View style={styles.container}>
-      <View style={styles.recipeBtn}>
-        <Button title="Add Recipe" onPress={onClick} />
-        {showResults ? <RecipeThing /> : null}
-      </View>
+      <TextInput
+        style={styles.TextInput}
+        placeholder="add recipe name"
+        placeholderTextColor="#003f5c"
+        //onChangeText={(recipe_name) => setRecipeName(recipe_name)}
+      />
+      <Button
+        title="foodSearch"
+        onPress={() => navigation.navigate("FoodSearch")}
+      />
+      <Button title="Save" style={styles.recipeBtn} />
     </View>
   );
 }

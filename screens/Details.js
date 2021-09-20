@@ -47,12 +47,15 @@ function Details({ route, navigation }) {
           </View>
         </View>
       ))}
-      <Button
+      {/* <Button
         title="Food Search"
         onPress={() => navigation.navigate("FoodSearch")}
-      />
+      /> */}
 
-      <Button title="Recipes" onPress={() => navigation.navigate("Recipes")} />
+      <Button
+        title="Create new Recipe"
+        onPress={() => navigation.navigate("Recipes")}
+      />
     </View>
   );
 }
